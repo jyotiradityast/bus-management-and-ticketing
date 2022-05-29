@@ -201,7 +201,7 @@ def open_traveller_frame():
 
     #Search------------------------------------------------------------------------------------------------
     def search():
-        message=messagebox.showerror("Sorry","Sorry. Find buses doesn't work. The added records from Admin are saved in the database file. Bad time management and prioritisation.")
+        message=messagebox.showerror("Sorry","Sorry. Find buses doesn't work yet. The added records from Admin are saved in the database file. Bad time management and prioritisation.")
 
     button_find=Button(frame_traveller,text="Find Buses",command=search)
     button_find.grid(row=4,column=1,columnspan=2,sticky="nesw")
