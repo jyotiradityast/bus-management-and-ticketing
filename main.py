@@ -3,7 +3,6 @@ from tkinter import messagebox
 import sqlite3
 
 bgcolour="#a2e1ff"
-password="123456"
 root=Tk()
 root.title("SkyBus")
 root.configure(background="#a2e1ff")
@@ -113,7 +112,7 @@ def open_admin_frame():
     e3.grid(row=7,column=1,columnspan=2,sticky="nesw")
     e4.grid(row=8,column=1,columnspan=2,sticky="nesw")
 
-    def submit_entry(): #Submission---Submission---Submission---Submission---Submission---Submission---Submission---Submission---Submission---Submission---Submission---
+    def submit_entry(): #Submitting Entries
 
         bus_type=o1.get()
         source=o2.get()
@@ -124,7 +123,6 @@ def open_admin_frame():
         fare=e3.get()
         date=e4.get()
 
-        #blank field error---blank field error---blank field error---
         c1=len(bus_type)
         c2=len(source)
         c3=len(dest)
@@ -134,7 +132,7 @@ def open_admin_frame():
         c7=len(fare)
         c8=len(date)
         checklen=c1+c2+c3+c4+c5+c6+c7+c8
-        if(checklen>=35):
+        if(checklen>=35): 
 
             insert_data=(bus_type,source,dest,seats,dept_time,arr_time,fare,date)
             insert_query="INSERT INTO buslist values(?,?,?,?,?,?,?,?)"
@@ -148,12 +146,12 @@ def open_admin_frame():
 
             open_admin_frame()
         else:
-            status_info=messagebox.showwarning("Alert.","Fill All Details")
+            status_info=messagebox.showwarning("Alert.","Fill All Details") #Entry error
 
     button_submit=Button(frame_admin,text="Submit",command=submit_entry)
     button_submit.grid(row=9,column=1,columnspan=2,sticky="nesw")
 
-#Traveller frame---Traveller frame---Traveller frame---Traveller frame---Traveller frame---Traveller frame---Traveller frame---Traveller frame---Traveller frame---
+#Traveller frame--------------------------------------------------------------------------------------------------
 def open_traveller_frame():
 
     frame_admin.grid_forget()
@@ -201,7 +199,7 @@ def open_traveller_frame():
     e1=Entry(frame_traveller)
     e1.grid(row=3,column=1,columnspan=2,sticky="nesw")
 
-    #Search---Search---Search---Search---Search---Search---Search---Search---Search---Search---Search---Search---Search---
+    #Search------------------------------------------------------------------------------------------------
     def search():
         message=messagebox.showerror("Sorry","Sorry. Find buses doesn't work. The added records from Admin are saved in the database file. Bad time management and prioritisation.")
 
